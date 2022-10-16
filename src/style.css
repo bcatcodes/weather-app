@@ -1,1 +1,46 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(25, 40, 40);
+}
+.weather-app {
+  max-width: 600px;
+  background-color: skyblue;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1.5px solid #7bbed8;
+  border-radius: 5px;
+}
 
+.source {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 28px;
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.weather-temperature {
+  margin-right: 10px;
+}
+
+.weather-temperature strong {
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -24px;
+}
