@@ -26,9 +26,11 @@ h1 {
 li {
   list-style: none;
   font-size: 16px;
-  text-transform: capitalize;
   font-weight: normal;
   line-height: 20px;
+}
+li .first-letter {
+  text-transform: capitalize;
 }
 
 .weather-temperature {
