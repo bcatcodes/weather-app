@@ -28,7 +28,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Houston&appid=${
 axios.get(apiUrl).then(displayTemperature);
 
 function displayTemperature(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
