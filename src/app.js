@@ -76,8 +76,6 @@ function displayCelciusTemperature(event) {
   let celsiusTemperature = (fahrenheitTemperature - 32) / 1.8;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-search("New York");
-
 let fahrenheitTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -88,3 +86,5 @@ celsiusLink.addEventListener("click", displayCelciusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+search("Houston");
