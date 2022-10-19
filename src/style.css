@@ -56,3 +56,8 @@ li .first-letter {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+
+.units a {
+  text-decoration: none;
+  color: blue;
+}
