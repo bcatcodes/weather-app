@@ -61,3 +61,21 @@ li .first-letter {
   text-decoration: none;
   color: blue;
 }
+
+.day-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.forecast-row-day {
+  font-size: 15px;
+}
+
+.forecast-row-temp {
+  font-size: 11px;
+  color: 000;
+}
+
+.forecast-low {
+  opacity: 0.5;
+}
