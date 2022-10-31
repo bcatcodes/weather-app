@@ -21,30 +21,36 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function displayForecast() {
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-temps");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
-  
-            <div class="col-2">
-              <div class="forecast-row-day">
-                ${day}
+        <div class="col-2">
+         <div class="forecast-row-day">
+               ${forecastDay.dt}
                 </div>
               <img
-                src="http://openweathermap.org/img/wn/01n@2x.png"
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                 alt=""
                 width="30"
               />
               <div class="forecast-row-temp">
-                <span class="forecast-high">65°</span>
+                <span class="forecast-high">${forecastDay.temp.max}° </span>
                 /
-                <span class="forecast-low">45°</span>
+                <span class="forecast-low">${forecastDay.temp.min}° </span>
               </div>
             </div>
       
@@ -54,6 +60,12 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "d1597af0dfaa647ce0306582042cac0e";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -77,6 +89,9 @@ function displayTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 function search(city) {
   let apiKey = "d1597af0dfaa647ce0306582042cac0e";
@@ -122,4 +137,3 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("Houston");
-displayForecast();
