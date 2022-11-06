@@ -1,81 +1,68 @@
-body {
-  font-family: "Montserrat", sans-serif;
-  color: rgb(25, 40, 40);
-}
 .weather-app {
-  max-width: 600px;
   background-color: skyblue;
-  margin: 20px auto;
-  padding: 10px;
-  border: 1.5px solid #7bbed8;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
   border-radius: 5px;
 }
-
-.source {
-  max-width: 600px;
-  margin: 0 auto;
+.forecast-day {
+  border: 1px solid #2c2d2e;
+  border-radius: 5px;
+  padding: 10px;
 }
-
-h1 {
-  font-size: 45px;
-  font-weight: normal;
-  line-height: 28px;
-  padding: 20px;
-}
-
-li {
-  list-style: none;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 20px;
-}
-li .first-letter {
-  text-transform: capitalize;
-}
-
-.weather-temperature {
-  margin-right: 10px;
-}
-
-.weather-temperature strong {
-  font-size: 45px;
-  font-weight: 400;
-}
-
-.weather-temperature .units {
-  position: relative;
-  font-size: 16px;
-  top: -24px;
-}
-
-.weather-temperature .active {
-  color: rgb(25, 40, 40);
-  cursor: default;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
-
-.units a {
-  text-decoration: none;
-  color: blue;
-}
-
 .weather-forecast {
-  margin-top: 20px;
+  color: black;
+  padding: 10px;
+  margin-bottom: 10px;
   text-align: center;
+  margin-top: 25px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}
+.city {
+  font-size: 48px;
+  color: #3a3151;
+  margin-left: 130px;
+  margin-bottom: 0px;
+}
+#temperature {
+  font-size: 36px;
+  color: #3a3151;
+  margin-top: -100px;
+}
+.row {
+  color: #3a3151;
+}
+#current-id {
+  margin-left: -175px;
+}
+.updated-time {
+  font-size: 12px;
+  margin-left: 130px;
+}
+.temperature-description,
+.humidity,
+.wind {
+  font-size: 18px;
+  position: relative;
+  top: 40px;
+  margin-left: 150px;
+}
+.city-name {
+  margin-left: 200px;
 }
 
-.forecast-row-day {
-  font-size: 15px;
+.city-info,
+.temp-info {
+  margin-top: 0px;
 }
 
-.forecast-row-temp {
-  font-size: 11px;
-  color: 000;
+#sourcelink {
+  margin-left: 130px;
 }
 
-.forecast-low {
-  opacity: 0.5;
+#icon {
+  margin-left: 130px;
 }
